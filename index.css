@@ -1,0 +1,264 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: rgb(209, 213, 216);
+}
+#home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#more{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#about{
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
+    font-size: 35px;
+}
+#about h1 p{
+    margin-top: 15px;
+    font-size: 44px;
+}
+#tt{
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    width: 120px;
+    height: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#tt:hover{
+    background: black;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
+}
+#tm{
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    width: 130px;
+    height: 55px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#tm:hover{
+    background-color: black;
+    color: white;
+}
+nav a {
+    text-decoration: none;
+
+}
+
+hr {
+    height: 20px;
+    background-color: rgba(140, 165, 172, 0.281);
+    border: none;
+}
+#resume {
+    text-decoration: double;
+    font-size: 30px;
+    position: absolute;
+    object-fit: cover;
+}
+#btnn{
+    margin-top: 20px;
+}
+
+#btnn button{
+    width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+#btnn button{
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    transition: 0.8s;
+}
+
+#btnn button:hover{
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
+}
+#tm { width: 180px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+#tm:hover{
+    background: black;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
+
+}
+
+#tm :active{
+    transform: scale(0.5);
+}
+#MySelf{
+    text-align: center;
+    padding: 50px;
+    font-size: 20px;
+    line-height: 1.8;
+}
+#contact{
+    text-align: center;
+    padding: 60px 20px;
+}
+
+#contact h1{
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+#contact form{
+    max-width: 500px;
+    margin: auto;
+}
+
+#contact input,
+#contact textarea{
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+#contact textarea{
+    resize: none;
+}
+
+#contact button{
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contact button:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
+}
+#project{
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(139, 138, 138, 0.169);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+#project:hover{
+    border-color: #007BFF;
+    box-shadow: 0 0 15px rgba(0,123,255,0.4);
+    transform: translateY(-5px);
+}
+
+#project h3{
+    margin-bottom: 15px;
+}
+
+#project h5{
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.view-btn{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: rgb(242, 238, 238);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.view-btn:hover{
+      border-color: #007BFF;
+    box-shadow: 0 0 15px rgba(0,123,255,0.4);
+    transform: translateY(-5px);
+}
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+h3{
+    font-size: 30px;
+}
+h5{
+    font-size: 15px;
+}
+.me {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto; 
+}
+#certificate{
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 252, 252, 0.169);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+#certificate:hover{
+    border-color: #007BFF;
+    box-shadow: 0 0 15px rgba(0,123,255,0.4);
+    transform: translateY(-5px);
+}
+
+.cer {
+        padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: rgba(255, 255, 255, 0.995);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.cer:hover{
+      border-color: #007BFF;
+    box-shadow: 0 0 15px rgba(100, 101, 101, 0.4);
+    transform: translateY(-5px);
+}
