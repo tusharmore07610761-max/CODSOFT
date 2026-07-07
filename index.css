@@ -1,71 +1,104 @@
-html{
+/* Basic Reset for consistent spacing across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 body {
     background-color: rgb(209, 213, 216);
+    overflow-x: hidden; /* Phone par horizontal scroll ko rokne ke liye */
 }
-#home{
+
+/* --- HOME SECTION --- */
+#home {
     position: relative;
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
 
-#more{
+#more {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-#about{
+#about {
     position: absolute;
     top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 80%;
+    width: 90%; /* 80% se 90% kiya mobile ke liye behtar fit ke liye */
     font-size: 35px;
 }
-#about h1 p{
+
+/* Note: HTML mein h1 ke andar p tag valid nahi hota. Ise h1, p likhna behtar hai */
+#about h1, #about p {
     margin-top: 15px;
     font-size: 44px;
 }
-#tt{
+
+/* --- BUTTONS --- */
+#tt, #tm {
     padding: 10px;
     border: none;
     border-radius: 50px;
-    width: 120px;
     height: 50px;
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-#tt:hover{
+#tt {
+    width: 120px;
+}
+
+#tm {
+    width: 180px; /* Neeche wali #tm ki properties merge kar di hain */
+}
+
+#tt:hover, #tm:hover {
     background: black;
     color: white;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
 }
-#tm{
-    padding: 10px;
+
+#tm:active {
+    transform: scale(0.95); /* 0.5 bohot chhota tha, 0.95 natural feel dega */
+}
+
+#btnn {
+    margin-top: 20px;
+}
+
+#btnn button {
+    width: 180px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
     border: none;
-    border-radius: 50px;
-    width: 130px;
-    height: 55px;
+    border-radius: 30px;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.5s; /* 0.8s se thoda fast kiya UX ke liye */
 }
 
-#tm:hover{
-    background-color: black;
-    color: white;
+#btnn button:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
 }
+
+/* --- TYPOGRAPHY & LAYOUT --- */
 nav a {
     text-decoration: none;
-
 }
 
 hr {
@@ -73,92 +106,76 @@ hr {
     background-color: rgba(140, 165, 172, 0.281);
     border: none;
 }
+
 #resume {
-    text-decoration: double;
     font-size: 30px;
-    position: absolute;
-    object-fit: cover;
-}
-#btnn{
-    margin-top: 20px;
+    /* Removed text-decoration: double and object-fit: cover as they conflict or don't apply to text properly */
 }
 
-#btnn button{
-    width: 180px;
-    height: 50px;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    cursor: pointer;
-}
-#btnn button{
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    transition: 0.8s;
-}
-
-#btnn button:hover{
-    background: linear-gradient(135deg, #764ba2, #667eea);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
-}
-#tm { width: 180px;
-    height: 50px;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.8s;
-}
-
-#tm:hover{
-    background: black;
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
-
-}
-
-#tm :active{
-    transform: scale(0.5);
-}
-#MySelf{
+h1 {
     text-align: center;
-    padding: 50px;
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h5 {
+    font-size: 15px;
+}
+
+/* --- SECTIONS --- */
+#MySelf {
+    text-align: center;
+    padding: 50px 20px; /* Side padding add ki taaki text screen se na chipke */
     font-size: 20px;
     line-height: 1.8;
 }
-#contact{
+
+.me {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%; /* Image ko gol (circular) dikhane ke liye achha lagta hai, chahiye toh hata dein */
+    object-fit: cover;
+}
+
+/* --- CONTACT SECTION --- */
+#contact {
     text-align: center;
     padding: 60px 20px;
 }
 
-#contact h1{
+#contact h1 {
     font-size: 40px;
     margin-bottom: 30px;
 }
 
-#contact form{
+#contact form {
+    width: 100%;
     max-width: 500px;
     margin: auto;
 }
 
 #contact input,
-#contact textarea{
+#contact textarea {
     width: 100%;
     padding: 15px;
     margin: 10px 0;
     border: none;
     border-radius: 10px;
     font-size: 16px;
+    font-family: inherit;
 }
 
-#contact textarea{
-    resize: none;
+#contact textarea {
+    resize: vertical; /* User ko sirf height badhane allow karega, width nahi */
+    min-height: 120px;
 }
 
-#contact button{
+#contact button {
     width: 200px;
     height: 50px;
     border: none;
@@ -168,97 +185,113 @@ hr {
     font-size: 18px;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: 10px;
 }
 
-#contact button:hover{
+#contact button:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
 }
-#project{
-    width: 500px;
+
+/* --- CARDS (Project & Certificate) --- */
+/* Fixed 500px hata kar max-width aur width: 90% kiya gaya hai */
+#project, #certificate {
+    width: 90%; 
+    max-width: 500px;
     margin: 50px auto;
     padding: 20px;
     text-align: center;
-    background: rgba(139, 138, 138, 0.169);
     border: 2px solid transparent;
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
-#project:hover{
+#project {
+    background: rgba(139, 138, 138, 0.169);
+}
+
+#certificate {
+    background: rgba(255, 252, 252, 0.169);
+}
+
+#project:hover, #certificate:hover {
     border-color: #007BFF;
-    box-shadow: 0 0 15px rgba(0,123,255,0.4);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
     transform: translateY(-5px);
 }
 
-#project h3{
+#project h3, #certificate h3 {
     margin-bottom: 15px;
 }
 
-#project h5{
+#project h5, #certificate h5 {
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-.view-btn{
+.view-btn, .cer {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     background: linear-gradient(135deg, #667eea, #764ba2);
-    color: rgb(242, 238, 238);
+    color: white;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.view-btn:hover{
-      border-color: #007BFF;
-    box-shadow: 0 0 15px rgba(0,123,255,0.4);
-    transform: translateY(-5px);
-}
-h1 {
-    text-align: center;
-    font-size: 50px;
-}
-h3{
-    font-size: 30px;
-}
-h5{
-    font-size: 15px;
-}
-.me {
-    display: block;
-    width: 200px;
-    height: 200px;
-    margin: 0 auto; 
-}
-#certificate{
-    width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
-    background: rgba(255, 252, 252, 0.169);
-    border: 2px solid transparent;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-}
-
-#certificate:hover{
-    border-color: #007BFF;
-    box-shadow: 0 0 15px rgba(0,123,255,0.4);
-    transform: translateY(-5px);
-}
-
-.cer {
-        padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: rgba(255, 255, 255, 0.995);
-    cursor: pointer;
-    transition: 0.3s;
-}
-.cer:hover{
-      border-color: #007BFF;
+.view-btn:hover, .cer:hover {
     box-shadow: 0 0 15px rgba(100, 101, 101, 0.4);
-    transform: translateY(-5px);
+    transform: translateY(-3px);
+}
+
+
+/* ========================================================
+   MEDIA QUERIES FOR MOBILE DEVICES (Phones & Small Tablets)
+   Ye code phone par website ko properly adjust karega
+   ======================================================== */
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 35px; /* Bade font ko chhota kiya */
+    }
+    
+    h3 {
+        font-size: 24px;
+    }
+
+    #about {
+        top: 75%; /* Phone par thoda upar shift kiya taaki kate nahi */
+        width: 95%;
+        font-size: 24px;
+    }
+
+    #about h1, #about p {
+        font-size: 28px; /* Bade titles ko phone-friendly banaya */
+    }
+
+    #MySelf {
+        padding: 30px 15px;
+        font-size: 16px; /* Text thoda chhota kiya read karne mein aasaani ke liye */
+    }
+
+    #contact {
+        padding: 40px 15px;
+    }
+
+    #contact h1 {
+        font-size: 30px;
+    }
+
+    #project, #certificate {
+        margin: 30px auto;
+        padding: 15px;
+    }
+
+    /* Buttons ko phone ke hisaab se adjust kiya */
+    #tt, #tm, #btnn button, #contact button {
+        width: 150px;
+        font-size: 16px;
+        height: 45px;
+    }
 }
