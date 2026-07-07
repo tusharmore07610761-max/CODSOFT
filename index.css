@@ -70,6 +70,7 @@ body {
     box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
 }
 
+
 #tm:active {
     transform: scale(0.95); /* 0.5 bohot chhota tha, 0.95 natural feel dega */
 }
@@ -87,7 +88,7 @@ body {
     border-radius: 30px;
     font-size: 18px;
     cursor: pointer;
-    transition: 0.5s; /* 0.8s se thoda fast kiya UX ke liye */
+    transition: 0.5s; 
 }
 
 #btnn button:hover {
@@ -96,7 +97,6 @@ body {
     box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
 }
 
-/* --- TYPOGRAPHY & LAYOUT --- */
 nav a {
     text-decoration: none;
 }
@@ -109,7 +109,6 @@ hr {
 
 #resume {
     font-size: 30px;
-    /* Removed text-decoration: double and object-fit: cover as they conflict or don't apply to text properly */
 }
 
 h1 {
@@ -125,10 +124,9 @@ h5 {
     font-size: 15px;
 }
 
-/* --- SECTIONS --- */
 #MySelf {
     text-align: center;
-    padding: 50px 20px; /* Side padding add ki taaki text screen se na chipke */
+    padding: 50px 20px; 
     font-size: 20px;
     line-height: 1.8;
 }
@@ -138,11 +136,10 @@ h5 {
     width: 200px;
     height: 200px;
     margin: 0 auto;
-    border-radius: 50%; /* Image ko gol (circular) dikhane ke liye achha lagta hai, chahiye toh hata dein */
+    border-radius: 50%; 
     object-fit: cover;
 }
 
-/* --- CONTACT SECTION --- */
 #contact {
     text-align: center;
     padding: 60px 20px;
@@ -171,7 +168,7 @@ h5 {
 }
 
 #contact textarea {
-    resize: vertical; /* User ko sirf height badhane allow karega, width nahi */
+    resize: vertical; 
     min-height: 120px;
 }
 
@@ -193,8 +190,6 @@ h5 {
     box-shadow: 0 5px 15px rgba(118, 75, 162, 0.5);
 }
 
-/* --- CARDS (Project & Certificate) --- */
-/* Fixed 500px hata kar max-width aur width: 90% kiya gaya hai */
 #project, #certificate {
     width: 90%; 
     max-width: 500px;
@@ -245,15 +240,30 @@ h5 {
     transform: translateY(-3px);
 }
 
-
-/* ========================================================
-   MEDIA QUERIES FOR MOBILE DEVICES (Phones & Small Tablets)
-   Ye code phone par website ko properly adjust karega
-   ======================================================== */
-
 @media screen and (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-wrap: nowrap; 
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 10px 5px;
+        overflow-x: auto; 
+    }
+
+    nav a, 
+    nav button {
+        flex: 1; 
+        font-size: 12px; 
+        padding: 8px 5px;
+        margin: 0 2px;
+        text-align: center;
+        white-space: nowrap; 
+        border-radius: 20px;
+    }
+
     h1 {
-        font-size: 35px; /* Bade font ko chhota kiya */
+        font-size: 35px;
     }
     
     h3 {
@@ -261,18 +271,18 @@ h5 {
     }
 
     #about {
-        top: 75%; /* Phone par thoda upar shift kiya taaki kate nahi */
+        top: 75%; 
         width: 95%;
         font-size: 24px;
     }
 
     #about h1, #about p {
-        font-size: 28px; /* Bade titles ko phone-friendly banaya */
+        font-size: 28px; 
     }
 
     #MySelf {
         padding: 30px 15px;
-        font-size: 16px; /* Text thoda chhota kiya read karne mein aasaani ke liye */
+        font-size: 16px; 
     }
 
     #contact {
@@ -288,7 +298,6 @@ h5 {
         padding: 15px;
     }
 
-    /* Buttons ko phone ke hisaab se adjust kiya */
     #tt, #tm, #btnn button, #contact button {
         width: 150px;
         font-size: 16px;
